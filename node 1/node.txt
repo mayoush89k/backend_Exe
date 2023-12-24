@@ -1,0 +1,16 @@
+What are 3 things node.js has that the client side javascript doesn’t have. And the reasons why.
+1. file system access
+    reason is the server side sometimes needs to read write to a file in the system server. so node js is the way
+2. access to operating system API
+    reason is the server side sometimes needs to run external processes or accessing system environment variables
+3. Networking Capability 
+    reason is server needs to handle http incoming requests, network communication and respond to client
+
+
+What are 3 things the client side javascript has that node.js doesn’t have. And the reasons why.
+1. DOM Manipulation
+    reason is to perform the structure and content of html document to client
+2. Browser-Specific APIs
+    reason is to show result into window of browser and to save the api request results in session, or local Storage 
+3. User Interface Events
+    reason to respond the client events like (clicking on button or entering data into inputs, etc...)
