@@ -20,10 +20,8 @@ const validator = require('validator')
 console.log("email validation ", validator.isEmail('mayoush89k@gamil.com'))
 // 2.
 
+
 // Create 3 functions using the export/import syntax.
-// Import the file system module using the import syntax.
-// main.js
-// main.js
 const addNumbers = require('./add.js');
 const capitalizeString = require('./capitalize.js');
 const isEvenNumber = require('./isEven.js');
@@ -38,6 +36,7 @@ console.log('Capitalized:', capitalized);
 const numberToCheck = 10;
 console.log(`${numberToCheck} is even: ${isEvenNumber(numberToCheck)}`);
 
+// Import the file system module using the import syntax.
 // Using require:
 const fs = require('fs');
 console.log(fs.readFileSync('example.txt', 'utf8'));
