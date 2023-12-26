@@ -17,7 +17,7 @@ const server = createServer((req, res) => {
       res.end(scriptFile);
       return;
     case "/users":
-      const jsonFile = readFileSync("./src/user.json", "utf-8");
+      const jsonFile = readFileSync("./src/users.json", "utf-8");
       res.end(jsonFile);
       return;
 
