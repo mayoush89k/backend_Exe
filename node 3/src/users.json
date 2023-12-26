@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Mr. Casey Reichel",
+    "username": "Abdullah.Keebler",
+    "password": "QMaupbBWA2ArUmA",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/635.jpg",
+    "parksAdded": [],
+    "favorite": [],
+    "location": {},
+    "email": "Jerel14@yahoo.com",
+    "id": "1"
+  },
+  {
+    "name": "Dr. Wallace Durgan",
+    "username": "Kellie_Grimes48",
+    "password": "I69GilS_vpc6gVM",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/704.jpg",
+    "parksAdded": {},
+    "favorite": [],
+    "location": {},
+    "email": "Ubaldo15@gmail.com",
+    "id": "2"
+  },
+  {
+    "name": "Dawn Schumm",
+    "username": "Mattie6",
+    "password": "nS3PWSq4PVup8ZU",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/71.jpg",
+    "parksAdded": [],
+    "favorite": [],
+    "location": {},
+    "email": "Bethel_Gerhold25@hotmail.com",
+    "id": "3"
+  },
+  {
+    "name": "Mamie Farrell",
+    "username": "Alayna12",
+    "password": "310GyAEDS9nOKIt",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/685.jpg",
+    "parksAdded": [],
+    "favorite": [],
+    "location": {},
+    "email": "Raymond_Casper72@gmail.com",
+    "id": "4"
+  },
+  {
+    "name": "Miss Alison Mante",
+    "username": "Joaquin_Kuhn",
+    "password": "85e3VlRZpGF2Lxt",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/532.jpg",
+    "parksAdded": [],
+    "favorite": [],
+    "location": {},
+    "email": "Roosevelt.Hauck@yahoo.com",
+    "id": "5"
+  },
+  {
+    "name": "May Karam",
+    "username": "mayoush89k",
+    "password": "1qa@WS3ed",
+    "avatar": "",
+    "parksAdded": [
+      {
+        "name": "Park Enava",
+        "pictures": [
+          "https://kaltrips.com/wp-content/uploads/2023/07/20201212_080719-1-1536x864.jpg",
+          "https://kaltrips.com/wp-content/uploads/2023/07/IMG_2571-2.jpg"
+        ],
+        "description": "",
+        "location": {
+          "city": "Modeiin",
+          "state": "Central Israel"
+        },
+        "activities": ["hiking", "cycling", "kayak", "children playground"],
+        "addedBy": "mayoush89k",
+        "createdAt": 20,
+        "status": "pending"
+      }
+    ],
+    "favorite": [],
+    "location": {
+      "city": "Jerusalem"
+    },
+    "email": "mayoush89k@gmail.com",
+    "id": "6"
+  }
+]
