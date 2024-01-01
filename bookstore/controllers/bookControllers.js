@@ -46,12 +46,14 @@ const createANewBook = (req, res, next) => {
     const id = books.length + 1;
     const newBook = {
       id,
-      title,author,genre,
+      title,
+      author,
+      genre,
       pages: pages ? pages : crypto.randomInt(1000),
       publishedIn: publishedIn ? publishedIn : 1000 + crypto.randomInt(1023),
       description: description ? description : `description ${id}`,
       coverImage,
-      price: price ? price : crypto.randomInt(20) + 0.90,
+      price: price ? price : crypto.randomInt(20) + 0.9,
       reviews: [],
       averageRating: 0,
       readingProgress: 0,
