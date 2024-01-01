@@ -1,6 +1,7 @@
 import express from 'express'
 import { errorHandler } from './middleware/errorMiddleware.js'
 import bookRoutes from './routes/bookRoutes.js'
+import cors from 'cors'
 
 const app = express()
 app.use(cors())
