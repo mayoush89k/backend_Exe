@@ -1,0 +1,209 @@
+queries test Only 3 different city names
+1. Jerusalem
+db.restaurants.find({"address.city": "Jerusalem" })
+
+[{
+  "_id": {
+    "$oid": "6593f06989a402c4d6f7b33c"
+  },
+  "name": "Allegro",
+  "address": {
+    "city": "Jerusalem",
+    "street": "HaTsanhanim #3",
+    "coordinates": [
+      31.779996,
+      35.225883
+    ]
+  },
+  "typeOfCuisine": "Bistro & Cafe",
+  "kosher_halal": false,
+  "reviews": [
+    {
+      "date": "21/12/2022",
+      "score": 4.5
+    },
+    {
+      "date": "01/05/2023",
+      "score": 4
+    },
+    {
+      "date": "04/11/2023",
+      "score": 4.5
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6593f06989a402c4d6f7b33d"
+  },
+  "name": "Retro",
+  "address": {
+    "city": "Jerusalem",
+    "street": "Bethanina",
+    "coordinates": [
+      31.825005,
+      35.22668
+    ]
+  },
+  "typeOfCuisine": "Meals & Sandwitches",
+  "kosher_halal": true,
+  "reviews": [
+    {
+      "date": "01/01/2024",
+      "score": 4
+    },
+    {
+      "date": "12/12/2022",
+      "score": 4.5
+    },
+    {
+      "date": "11/05/2023",
+      "score": 4
+    }
+  ]
+}]
+
+2. Haifa
+db.restaurants.find({"address.city": "Haifa" })
+{
+  "name": "Kalamaris",
+  "address": {
+    "city": "Haifa",
+    "street": "Stella Maris",
+    "coordinates": [
+      32.827934,
+      34.970079
+    ]
+  },
+  "typeOfCuisine": "Fish & Sea Food Meals",
+  "kosher_halal": false,
+  "reviews": [
+    {
+      "date": "31/01/2020",
+      "score": 4
+    },
+    {
+      "date": "14/10/2022",
+      "score": 4.5
+    },
+    {
+      "date": "10/10/2023",
+      "score": 4
+    }
+  ]
+}
+
+3. Ramallah
+db.restaurants.find({"address.city": "Ramallah" })
+{
+  "_id": {
+    "$oid": "6594021b89a402c4d6f7b341"
+  },
+  "name": "Syraan",
+  "address": {
+    "city": "Ramallah",
+    "street": "Rukab St.",
+    "coordinates": [
+      31.90479,
+      35.20111
+    ]
+  },
+  "typeOfCuisine": "Restaurant & Cafe",
+  "kosher_halal": true,
+  "reviews": [
+    {
+      "date": "13/07/2021",
+      "score": 4
+    },
+    {
+      "date": "17/12/2022",
+      "score": 4.5
+    },
+    {
+      "date": "27/10/2023",
+      "score": 4
+    }
+  ]
+}
+
+* queries test type of Cuisin
+1. Fish and Sea Food Meals
+ db.restaurants.find({ typeOfCuisine: "Fish & Sea Food Meals" })
+[
+  {
+    _id: ObjectId('6593f0b189a402c4d6f7b33e'),
+    name: 'The Old Man and the Sea',
+    address: {
+      city: 'Tel-Aviv',
+      street: 'Nemal Yafo St 101',
+      coordinates: [ 32.052987, 34.749909 ]
+    },
+    typeOfCuisine: 'Fish & Sea Food Meals',
+    kosher_halal: true,
+    reviews: [
+      { date: '01/02/2022', score: 4.5 },
+      { date: '11/08/2023', score: 4 },
+      { date: '06/09/2023', score: 4.5 }
+    ]
+  },
+  {
+    _id: ObjectId('6593f0b189a402c4d6f7b33f'),
+    name: 'Kalamaris',
+    address: {
+      city: 'Haifa',
+      street: 'Stella Maris',
+      coordinates: [ 32.827934, 34.970079 ]
+    },
+    typeOfCuisine: 'Fish & Sea Food Meals',
+    kosher_halal: false,
+    reviews: [
+      { date: '31/01/2020', score: 4 },
+      { date: '14/10/2022', score: 4.5 },
+      { date: '10/10/2023', score: 4 }
+    ]
+  }
+]
+
+* queries to show whom reviewed before 2022
+{"reviews.date":{$lt:ISODate('2022-01-01')}}
+result exported as file : "reviews created before 2022"
+
+
+reviews are only on 2023
+{$and:[{"reviews.date":{$lte:ISODate('2023-01-01')}},{"reviews.date":{$gte:ISODate('2023-12-31')}}]}
+
+  "_id": {
+    "$oid": "6593f06989a402c4d6f7b33d"
+  },
+  "name": "Retro",
+  "address": {
+    "city": "Jerusalem",
+    "street": "Bethanina",
+    "coordinates": [
+      31.825005,
+      35.22668
+    ]
+  },
+  "typeOfCuisine": "Meals & Sandwitches",
+  "kosher_halal": true,
+  "reviews": [
+    {
+      "date": {
+        "$date": "2024-01-01T22:00:00.000Z"
+      },
+      "score": 4
+    },
+    {
+      "date": {
+        "$date": "2022-12-11T22:00:00.000Z"
+      },
+      "score": 4.5
+    },
+    {
+      "date": {
+        "$date": "2023-11-04T22:00:00.000Z"
+      },
+      "score": 4
+    }
+  ]
+}

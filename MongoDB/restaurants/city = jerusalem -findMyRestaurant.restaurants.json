@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "6593f06989a402c4d6f7b33c"
+  },
+  "name": "Allegro",
+  "address": {
+    "city": "Jerusalem",
+    "street": "HaTsanhanim #3",
+    "coordinates": [
+      31.779996,
+      35.225883
+    ]
+  },
+  "typeOfCuisine": "Bistro & Cafe",
+  "kosher_halal": false,
+  "reviews": [
+    {
+      "date": "21/12/2022",
+      "score": 4.5
+    },
+    {
+      "date": "01/05/2023",
+      "score": 4
+    },
+    {
+      "date": "04/11/2023",
+      "score": 4.5
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6593f06989a402c4d6f7b33d"
+  },
+  "name": "Retro",
+  "address": {
+    "city": "Jerusalem",
+    "street": "Bethanina",
+    "coordinates": [
+      31.825005,
+      35.22668
+    ]
+  },
+  "typeOfCuisine": "Meals & Sandwitches",
+  "kosher_halal": true,
+  "reviews": [
+    {
+      "date": "01/01/2024",
+      "score": 4
+    },
+    {
+      "date": "12/12/2022",
+      "score": 4.5
+    },
+    {
+      "date": "11/05/2023",
+      "score": 4
+    }
+  ]
+}]

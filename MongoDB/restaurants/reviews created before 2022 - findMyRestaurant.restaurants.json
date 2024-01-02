@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "6593f06989a402c4d6f7b33c"
+  },
+  "name": "Allegro",
+  "address": {
+    "city": "Jerusalem",
+    "street": "HaTsanhanim #3",
+    "coordinates": [
+      31.779996,
+      35.225883
+    ]
+  },
+  "typeOfCuisine": "Bistro & Cafe",
+  "kosher_halal": false,
+  "reviews": [
+    {
+      "date": {
+        "$date": "2020-01-11T22:00:00.000Z"
+      },
+      "score": 4.5
+    },
+    {
+      "date": {
+        "$date": "2023-01-04T22:00:00.000Z"
+      },
+      "score": 4
+    },
+    {
+      "date": {
+        "$date": "2023-04-10T21:00:00.000Z"
+      },
+      "score": 4.5
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6593f0b189a402c4d6f7b33f"
+  },
+  "name": "Kalamaris",
+  "address": {
+    "city": "Haifa",
+    "street": "Stella Maris",
+    "coordinates": [
+      32.827934,
+      34.970079
+    ]
+  },
+  "typeOfCuisine": "Fish & Sea Food Meals",
+  "kosher_halal": false,
+  "reviews": [
+    {
+      "date": {
+        "$date": "2021-12-27T08:00:00.000Z"
+      },
+      "score": 4
+    },
+    {
+      "date": {
+        "$date": "2023-10-14T22:00:00.000Z"
+      },
+      "score": 4.5
+    },
+    {
+      "date": {
+        "$date": "2023-10-09T21:00:00.000Z"
+      },
+      "score": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6594021b89a402c4d6f7b340"
+  },
+  "name": "Barbra",
+  "address": {
+    "city": "Bethlehem",
+    "street": "Arab Society street",
+    "coordinates": [
+      31.719247,
+      35.177752
+    ]
+  },
+  "typeOfCuisine": "Grilled Meals",
+  "kosher_halal": true,
+  "reviews": [
+    {
+      "date": {
+        "$date": "2020-12-03T22:00:00.000Z"
+      },
+      "score": 4.5
+    },
+    {
+      "date": {
+        "$date": "2023-10-06T21:00:00.000Z"
+      },
+      "score": 4
+    },
+    {
+      "date": {
+        "$date": "2022-06-07T21:00:00.000Z"
+      },
+      "score": 4.5
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6594021b89a402c4d6f7b341"
+  },
+  "name": "Syraan",
+  "address": {
+    "city": "Ramallah",
+    "street": "Rukab St.",
+    "coordinates": [
+      31.90479,
+      35.20111
+    ]
+  },
+  "typeOfCuisine": "Restaurant & Cafe",
+  "kosher_halal": true,
+  "reviews": [
+    {
+      "date": {
+        "$date": "2023-07-13T22:00:00.000Z"
+      },
+      "score": 4
+    },
+    {
+      "date": {
+        "$date": "2022-12-17T22:00:00.000Z"
+      },
+      "score": 4.5
+    },
+    {
+      "date": {
+        "$date": "2021-10-27T19:00:00.000Z"
+      },
+      "score": 4
+    }
+  ]
+}]
