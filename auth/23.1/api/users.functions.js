@@ -58,13 +58,13 @@ export const loginUser = (req, res) => {
       throw new Error("Invalid password");
     }
 
-    const JWT_SECRET = 'process.env.JWT_SECRET';
+    const SECRET_KEY = process.env.SECRET_KEY;
     const token = jwt.sign(
       {
         id: user._id,
         username: user.username,
       },
-      JWT_SECRET,
+      SECRET_KEY,
       { expiresIn: "2h" }
     ); 
     res.cookie("token ", token, { httpOnly: true }).json({
