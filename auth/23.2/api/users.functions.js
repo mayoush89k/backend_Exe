@@ -1,8 +1,14 @@
-import { loadDB, writeDB } from "../utils/db.functions.js";
+import {
+  createUserDB,
+  getUserByUsernameDB,
+} from "../utils/db.function.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import 'dotenv/config'
 
-export const registerNewUser = async (req, res) => {
+var salt = bcrypt.genSaltSync(10);
+
+export const registerNewUser = async (req, res, next) => {
   try {
     // check required fields
     const { username, password, email } = req.body;
@@ -11,26 +17,21 @@ export const registerNewUser = async (req, res) => {
       throw new Error("All of Username, Password and Email are required");
     }
 
-    // check if username exist in db
-    const db = loadDB();
-    let userExist = db.find((user) => username == user.username);
-    if (userExist) {
+    let newUser = await getUserByUsernameDB(username);
+
+    // check if user exists
+    if (newUser) {
       res.status(409);
       throw new Error("Username already taken");
     }
-    // hash the password and create a new user
-    const salt = bcrypt.genSaltSync(10);
+
+    // save the user to database
     const hashedPassword = bcrypt.hashSync(password, salt);
-    const newUser = {
-      _id: new Date().getTime(),
-      username: username,
-      password: hashedPassword,
-      email: email,
-      createdAt: new Date().toISOString(),
-    };
-    db.push(newUser);
-    writeDB(db);
-    res.send(newUser);
+    newUser = await createUserDB({ username, password: hashedPassword });
+    console.log('newUser: ', newUser);
+
+    // send response
+    res.send(`${newUser.username} has been successfully signedUp`);
   } catch (error) {
     res.send({
       message: error.message,
@@ -39,35 +40,34 @@ export const registerNewUser = async (req, res) => {
   }
 };
 
-export const loginUser = (req, res) => {
+export const loginUser = async (req, res, next) => {
   try {
     const { username, password } = req.query;
-    const db = loadDB();
-    let user = db.find((user) => username == user.username);
-    
+    const user = await getUserByUsernameDB(username);
+
+    // check username from db
     if (!user) {
       res.status(404);
       throw new Error("Username is not found");
     }
+    // compare passwords
+    const validPassword = await bcrypt.compare(password, user.password);
 
-    // check th password
-    const validatePassword = bcrypt.compare(password, user.password);
-
-    if (!validatePassword) {
+    if (!validPassword) {
       res.status(401);
       throw new Error("Invalid password");
     }
-
-    const JWT_SECRET = 'process.env.JWT_SECRET';
+    // create token and send it to client side
+    const SECRET_KEY = 'process.env.SECRET_KEY';
     const token = jwt.sign(
       {
-        id: user._id,
+        _id: user._id,
         username: user.username,
       },
-      JWT_SECRET,
-      { expiresIn: "2h" }
-    ); 
-    res.cookie("token ", token, { httpOnly: true }).json({
+      SECRET_KEY,
+      { expiresIn: "1h" }
+    );
+    res.cookie("token", token, { httpOnly: true }).json({
       message: `Logged in as ${user.username}`,
       token,
     });
